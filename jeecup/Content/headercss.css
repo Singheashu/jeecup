@@ -1,0 +1,51 @@
+﻿body {
+    font-family: Arial, sans-serif;
+    background-color: #f3f4f6;
+    margin: 0;
+    padding: 0;
+}
+
+.header {
+    background-color: #e0f2fe;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+    .header img {
+        height: 80px;
+        width: 80px;
+    }
+
+    .header .title {
+        text-align: center;
+    }
+
+        .header .title h1 {
+            font-size: 24px;
+            font-weight: bold;
+            margin: 0;
+        }
+
+        .header .title p {
+            font-size: 18px;
+            margin: 0;
+        }
+
+.nav {
+    background-color: #0284c7;
+    padding: 10px;
+}
+
+    .nav a {
+        color: white;
+        font-size: 18px;
+        text-decoration: none;
+        display: flex;
+        align-items: center;
+    }
+
+        .nav a i {
+            margin-right: 8px;
+        }

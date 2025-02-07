@@ -1,0 +1,143 @@
+﻿
+@{
+    ViewBag.Title = "Home";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<script src="~/Content/js/registration.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.7.1.js"
+        integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
+        crossorigin="anonymous"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
+<div class="container bg-white p-5 mt-4 shadow-sm">
+    <h1 class="text-center mb-4">Registration Form</h1>
+    <form action="@Url.Action("khushi","Home")" method="post">
+        <div class="mb-4">
+            <h2 class="h5">Personal Details</h2>
+            <div class="row g-3">
+                <div class="col-md-6">
+                    <label for="candidateName" class="form-label">Name: नाम</label>
+                    <input type="text" class="form-control" id="candidateName" name="CandidateName" placeholder="Candidate Name">
+                </div>
+                <div class="col-md-6">
+                    <label for="fatherName" class="form-label">Father's Name : पिता का नाम</label>
+                    <input type="text" class="form-control" id="fatherName" name="FathersName" placeholder="Father Name">
+                </div>
+                <div class="col-md-6">
+                    <label for="motherName" class="form-label">Mother's Name : मां का नाम</label>
+                    <input type="text" class="form-control" id="motherName" name="MothersName" placeholder="Mother Name">
+                </div>
+                <div class="col-md-6">
+                    <label for="dob" class="form-label">Date of Birth : जन्म तिथि</label>
+                    <input type="date" id="dob" name="dob" required />
+                </div>
+
+            </div>
+
+            <div class="col-12">
+                <label for="gender" class="form-label">Gender : लिंग</label>
+                <select class="form-select" id="gender" name="Gender">
+                    <option>-Select-</option>
+                    <option value="male">-Male-</option>
+                    <option value="female">-Female-</option>
+                    <option value="other">-Other-</option>
+                </select>
+            </div>
+            <div class="col-12">
+                <p class="form-text">
+                    उम्मीदवारों से अनुरोध है कि वे नीचे दिए गए विकल्पों में से किसी एक का चयन करें और आगे बढ़ें (Candidates are requested to select any one of the options below and proceed further):
+                </p>
+                <div class="form-check">
+                    <input class="form-check-input AadhaarConsent" type="radio" name="AadhaarConsent" id="option1">
+                    <label class="form-check-label" for="option1">
+                        I voluntarily agree to share my Aadhaar Number and I am aware that it will be used to establish my identity for the UPJEE - 2025 Examination by matching my personal identification details available in Aadhaar records of UIDAI.
+                        मैं स्वेच्छा से अपना आधार नंबर साझा करने के लिए सहमत हूं और मुझे पता है कि इसका उपयोग यूपीजेईई -2025 परीक्षा के लिए मेरी पहचान स्थापित करने के लिए यूआईडीएआई के आधार रिकॉर्ड में उपलब्ध मेरे व्यक्तिगत पहचान विवरण से मिलान करने के लिए किया जाएगा।
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input AadhaarConsent" type="radio" name="AadhaarConsent" id="option2">
+                    <label class="form-check-label" for="option2">
+                        My information on Aadhaar is not the same as entered in the Application Form.
+                        आधार पर मेरी जानकारी आवेदन पत्र में दर्ज की गई जानकारी के समान नहीं है।
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input  AadhaarConsent" type="radio" name="AadhaarConsent" id="option3">
+                    <label class="form-check-label" for="option3">
+                        I am not willing to share my Aadhaar Number.
+                        मैं अपना आधार नंबर साझा करने के लिए तैयार नहीं हूं।
+                    </label>
+                </div>
+            </div>
+        </div>
+</div>
+<div class="mb-4">
+    <h2 class="h5">Contact Details</h2>
+    <div class="row g-3">
+        <div class="col-md-6">
+            <label for="isdCode" class="form-label">ISD Code</label>
+            <select class="form-select" id="isdCode" name="ISDCode">
+                <option>India (91)</option>
+
+            </select>
+        </div>
+        <div class="col-md-6">
+            <label for="mobileNumber" class="form-label">Mobile Number : मोबाइल नंबर</label>
+            <input type="text" class="form-control" id="mobileNumber" placeholder="Mobile Number" name="MobileNumber">
+        </div>
+        <div class="col-12">
+            <label for="emailId" class="form-label">Email ID : ईमेल आईडी</label>
+            <input type="email" class="form-control" id="emailId" placeholder="EmailId" name="EmailID">
+        </div>
+    </div>
+</div>
+<div class="mb-4">
+    <h2 class="h5">Choose your Password</h2>
+    <div class="row g-3">
+        <div class="col-md-6">
+            <label for="password" class="form-label">Password</label>
+            <input type="password" class="form-control" id="password" name="PasswordHash" placeholder="Choose your password as per password policy">
+        </div>
+        <!-- <div class="col-md-6">
+            <label for="confirmPassword" class="form-label">Confirm Password</label>
+            <input type="password" class="form-control" id="confirmPassword" placeholder="Confirm Password" name="PasswordHash">
+        </div>
+           -->
+    </div>
+</div>
+<div class="mb-4">
+    <h2 class="h5">Security Pin Verification</h2>
+    <div class="row g-3">
+        <div class="col-md-6">
+            <label for="securityPin" class="form-label">Security Pin (case sensitive)</label>
+            <input type="text" class="form-control" id="securityPin" name="SecurityPin" placeholder="Security Pin">
+        </div>
+        <div class="col-md-6">
+            <label for="captcha" class="form-label">Security Pin</label>
+            <div class="input-group">
+                <input type="text" class="form-control" id="captcha" value="D214B6" name="SecurityPin" readonly>
+                <button class="btn btn-outline-secondary" type="button"><i class="fas fa-sync-alt"></i></button>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="text-center">
+    <button type="button" class="btn btn-primary" onclick="SubmitForm()">Submit</button>
+</div>
+    </form>
+</div>
+
+<div class="bg-primary p-3 mt-4 text-center text-white">
+    <a href="#" class="text-white text-decoration-none mx-2">Terms and Conditions</a> |
+    <a href="#" class="text-white text-decoration-none mx-2">Hyperlink Policy</a> |
+    <a href="#" class="text-white text-decoration-none mx-2">Privacy Policy</a> |
+    <a href="#" class="text-white text-decoration-none mx-2">Copyright Policy</a> |
+    <a href="#" class="text-white text-decoration-none mx-2">Disclaimer</a>
+</div>
