@@ -20,6 +20,10 @@ namespace jeecup.Controllers
         {
             return View();
         }
+        public ActionResult Contact()
+        {
+            return View();
+        }
         [HttpPost]
         public ActionResult khushi(Jeecup_tbl je)
         {
